@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.a.EnGround.repo.AdRepository">
+    
+    <resultMap id="adMap" type="com.a.EnGround.vo.AdVO">
+        <id property="adNo" column="id"/>
+        <result property="imageUrl" column="image_url"/>
+        <result property="targetUrl" column="target_url"/>
+    </resultMap>
+
+    <insert id="insertAd" parameterType="com.a.EnGround.vo.AdVO">
+        INSERT INTO ad (image_url, target_url) 
+        VALUES (#{imageUrl}, #{targetUrl});
+    </insert>
+	
+	<select id="selectAllAds" resultMap="adMap">
+        SELECT id, image_url, target_url FROM ad;
+    </select>
+	
+    <select id="selectLatestAd" resultMap="adMap">
+    SELECT id, image_url, target_url FROM ad ORDER BY id DESC LIMIT 1
+	</select>
+    
+</mapper>

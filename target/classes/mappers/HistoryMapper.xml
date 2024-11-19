@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="HistoryMapper">
+	<resultMap type="com.a.EnGround.vo.HistoryVO" id="historyMap">
+		<id property="historyNo" column="history_no" />
+		<result property="userId" column="user_id" />
+		<result property="score" column="score" />
+		<result property="time" column="time" />
+		<result property="recordCount" column="record_count"></result>
+	</resultMap>
+
+	<select id="getAll" resultMap="historyMap">
+		SELECT * FROM history
+		LIMIT #{offset}, #{limit}
+	</select>
+
+	<select id="count" resultType="int">
+		SELECT COUNT(*) FROM history
+	</select>
+
+	<select id="findById" parameterType="int" resultMap="historyMap">
+		SELECT h.history_no, h.user_id, h.score, h.time, h.is_finished,
+		(SELECT COUNT(*)
+		FROM game_records g
+		WHERE g.history_no = h.history_no) AS record_count
+		FROM history h
+		WHERE h.user_id = #{userId};
+	</select>
+
+	<select id="findByUserId" parameterType="String"
+		resultMap="historyMap">
+				SELECT h.history_no, h.user_id, h.score, h.time, h.is_finished,
+		(SELECT COUNT(*)
+		FROM game_records g
+		WHERE g.history_no = h.history_no and g.answer_count = 1) AS record_count
+		FROM history h
+		WHERE h.user_id = #{userId} and h.is_finished = 1;
+	</select>
+
+	<insert id="insertHistory" parameterType="com.a.EnGround.vo.HistoryVO">
+		INSERT INTO history (game_mode, user_id, room_id)
+SELECT #{gameMode}, #{userId}, #{roomId}
+WHERE NOT EXISTS (
+    SELECT 1 FROM history WHERE game_mode = #{gameMode} AND user_id = #{userId} AND is_finished = 0
+);
+	</insert>
+
+	<update id="updateScore"
+		parameterType="com.a.EnGround.vo.HistoryVO" useGeneratedKeys="true"
+		keyProperty="historyNo">
+		UPDATE history
+		SET score = score + #{score}
+		WHERE is_finished = 0 and user_id = #{userId} and game_mode = #{gameMode};
+	</update>
+	
+	<delete id="deleteHistory"
+		parameterType="com.a.EnGround.vo.HistoryVO">
+		DELETE FROM History WHERE is_finished = 0 and user_id = #{userId} and game_mode = #{gameMode};
+	</delete>
+
+	<select id="findHistoryNoByUserIdAndIsFinished"
+		parameterType="com.a.EnGround.vo.HistoryVO" resultType="int">
+		SELECT
+		history_no From history WHERE is_finished = 0 and user_id = #{userId} and game_mode = #{gameMode};
+	</select>
+	<select id="findUserByScore" parameterType="com.a.EnGround.vo.HistoryVO"
+		resultType="Integer">
+		SELECT score From history WHERE is_finished = 0 AND user_id
+		= #{userId} and game_mode = #{gameMode};
+	</select>
+	<update id="updateIsFinishedByUserId"
+		parameterType="com.a.EnGround.vo.HistoryVO">
+		UPDATE history SET is_finished = 1 Where user_id =
+		#{userId} and is_finished = 0;
+	</update>
+		<update id="updateIsFinishedByRoomId"
+		parameterType="com.a.EnGround.vo.HistoryVO">
+		UPDATE history SET is_finished = 1 Where room_id =
+		#{roomId} and is_finished = 0;
+	</update>
+
+</mapper>

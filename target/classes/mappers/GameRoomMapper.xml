@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.a.EnGround.repo.GameRoomRepository">
+	<resultMap type="com.a.EnGround.vo.GameRoomVO" id="gameRoomMap">
+		<result property="roomId" column="room_id"/>
+		<result property="score" column="score"/>
+		<result property="timer" column="timer"/>
+		<result property="categoryNo" column="category_no"/>
+	</resultMap>
+	
+	<select id="findGameInform" parameterType="HashMap" resultType = "com.a.EnGround.vo.GameRoomVO">
+		 SELECT * FROM GameRoom WHERE room_Id = #{roomId} and game_mode = #{gameMode};
+	</select>
+	
+	
+	<insert id="insertGameInform" parameterType="HashMap">
+		insert into gameRoom(room_Id, room_title, game_mode)
+		values(#{roomId}, #{roomTitle}, #{gameMode});
+	</insert>
+	
+	<update id="updateQuizRound" parameterType="HashMap">
+		UPDATE gameRoom
+		SET quiz_round = #{quizRound} 
+		WHERE room_id = #{roomId} and game_mode = #{gameMode};
+	</update>
+	
+	<update id="updateUserType" parameterType="HashMap">
+		UPDATE gameRoom
+		SET userType = #{host}
+		WHERE room_id = #{roomId} and user_id = #{userId};
+	</update>
+	<delete id="deleteGameRoom" parameterType="HashMap">
+		delete from gameRoom  
+		WHERE room_id = #{roomId} and game_mode = #{gameMode};
+	</delete>
+	
+	<select id="findAllOnlineGameRoom" resultMap="gameRoomMap">
+		SELECT * FROM GAMEROOM; 
+	</select>
+	
+	<select id="updateQuiz" parameterType="HashMap">
+		UPDATE gameRoom
+		SET Quiz = #{quiz}
+		WHERE room_id = #{roomId};
+	</select>
+
+</mapper>
+<!--  -->

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- -->
+<mapper namespace="com.a.EnGround.repo.InGameQuizRepository">
+	<resultMap type="com.a.EnGround.vo.InGameQuizVO"
+		id="inGameQuizMap">
+		<id property="inGameQuizNo" column="in_game_quiz_no"></id>
+		<result property="roomId" column="room_id" />
+		<result property="gameMode" column="game_mode" />
+
+
+		<association property="quiz"  javaType="com.a.EnGround.vo.QuizVO" >
+		<result property="question" column="question" />
+		<result property="timer" column="timer" />
+		<result property="hint1" column="hint1" />
+		<result property="hint2" column="hint2" />
+		<result property="hint3" column="hint3" />
+		<result property="answer" column="answer" />
+		<result property="blankIndex" column="blank_index" />
+		<result property="categoryNo" column="category_no" />
+		</association>
+
+	</resultMap>
+	<insert id="insertInGameQuiz" parameterType="HashMap">
+		insert into
+		in_game_quiz(room_Id, game_mode, word_no)
+		values(#{roomId},
+		#{gameMode}, #{wordNo});
+	</insert>
+
+	<select id="findInGameQuizByRoomIdAndGameMode"
+		parameterType="com.a.EnGround.vo.InGameQuizVO" resultMap="inGameQuizMap">
+		SELECT i.room_Id, i.game_Mode, w.question, w.timer, w.hint1, w.hint2, w.hint3,
+		w.answer, w.blank_Index, w.category_No
+		FROM in_game_quiz As i LEFT JOIN ${table} AS w ON i.word_no = w.word_no
+		WHERE room_id = #{roomId} and game_mode = #{gameMode}
+		ORDER BY i.in_game_quiz_no;
+	</select>
+
+</mapper>

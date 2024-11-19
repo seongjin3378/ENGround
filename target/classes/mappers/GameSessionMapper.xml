@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.a.EnGround.repo.GameSessionRepository">
+	<resultMap type="com.a.EnGround.vo.GameRoomVO"
+		id="gameSessionMap">
+		<result property="roomId" column="room_id" />
+		<result property="score" column="score" />
+	</resultMap>
+	<insert id="insertGameSession" parameterType="HashMap">
+		insert into game_session(user_id, room_id, is_host) values(#{userId},
+		#{roomId}, #{isHost})
+	</insert>
+
+	<select id="findHostByRoomId" parameterType="String"
+		resultType="String">
+		SELECT user_id FROM game_session WHERE room_Id = #{value} and is_host = 1;
+	</select>
+
+	<select id="findHostByUserId" parameterType="String"
+		resultType="String">
+		SELECT user_id FROM game_session WHERE user_Id = #{value};
+	</select>
+
+	<delete id="deleteGameSession" parameterType="String">
+		delete from game_session where user_id = #{value}
+	</delete>
+	
+	<update id="randomHostUpdate"
+		parameterType="com.a.EnGround.vo.GameSessionVO">
+		UPDATE game_session
+		SET is_host = true
+		WHERE user_id = (
+		SELECT user_id FROM (SELECT user_id from game_session
+		WHERE room_id = #{roomId}
+		ORDER BY RAND()
+		LIMIT 1)
+		as t);
+
+	</update>
+
+	 
+	<update id="updateHost"
+		parameterType="com.a.EnGround.vo.GameSessionVO">
+		UPDATE game_session
+		SET is_host = #{isHost}
+		WHERE user_id = #{userId}
+
+	</update>
+
+	<select id="findUserInform" parameterType="HashMap"
+		resultMap="gameSessionMap">
+		SELECT * FROM Game_Session WHERE room_Id = #{roomId};
+	</select>
+</mapper>

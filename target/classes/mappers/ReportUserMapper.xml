@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ReportUserMapper">
+	<resultMap type="com.a.EnGround.vo.ReportUserVO"
+		id="ReportUserMap">
+		<id property="reportNo" column="Report_NO" />
+		<result property="reportedId" column="Reported_Id" />
+		<result property="idReported" column="Id_Reported" />
+		<result property="userType" column="user_type" /> <!-- 수정: idReported_userType를 userType으로 변경 -->
+		
+	</resultMap>
+	<select id="findReportNo" parameterType="Integer"
+		resultMap="ReportUserMap">
+		SELECT
+		Report_NO,
+		Reported_Id,
+		ID_reported,
+		user_type,
+		(SELECT GROUP_CONCAT(content SEPARATOR ', ')
+		FROM chat_history
+		WHERE chat_history.room_id = report.chat_history_room_id) AS chat_content,
+		(SELECT GROUP_CONCAT(time SEPARATOR ', ')
+		FROM chat_history
+		WHERE chat_history.room_id = report.chat_history_room_id) AS chat_time
+
+		FROM report AS report
+		INNER JOIN user AS user ON report.ID_reported = user.ID
+		WHERE Report_NO = #{value};
+	</select>
+
+	<select id="findReportedId" parameterType="String"
+		resultMap="ReportUserMap">
+		select * from report where Reported_Id = #{value};
+	</select>
+
+	<select id="IdReported" parameterType="String"
+		resultMap="ReportUserMap">
+		select * from report where Id_Reported = #{value};
+	</select>
+	<select id="findAllReports" resultMap="ReportUserMap">
+		SELECT
+		Report_NO,
+		Reported_Id,
+		ID_reported,
+		user_type
+		FROM report as report
+		INNER JOIN user as user ON report.ID_reported = user.id;
+	</select>
+	<update id="userTypeUpdate"
+		parameterType="com.a.EnGround.vo.ReportUserVO">
+		update user set
+		user_type = #{userType} where id = #{id};
+	</update>
+	<insert id="insertReport"
+		parameterType="com.a.EnGround.vo.ReportUserVO">
+		insert into report(reported_id, id_reported, report_type, report_content,
+		chat_history_room_id) values(#{reportedId}, #{idReported},
+		#{reportType}, #{reportContent}, #{chatHistoryRoomId});
+	</insert>
+</mapper>

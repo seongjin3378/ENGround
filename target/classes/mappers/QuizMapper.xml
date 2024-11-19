@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- -->
+<mapper namespace="com.a.EnGround.repo.QuizRepository">
+	<resultMap type="com.a.EnGround.vo.QuizVO" id="quizMap">
+		<id property="quizNo" column="word_no" />
+		<result property="question" column="question" />
+		<result property="timer" column="timer" />
+		<result property="hint1" column="hint1" />
+		<result property="hint2" column="hint2" />
+		<result property="hint3" column="hint3" />
+		<result property="answer" column="answer" />
+		<result property="blankIndex" column="blank_index" />
+		<result property="categoryNo" column="category_no" />
+	</resultMap>
+
+
+	<!-- -->
+	<select id="findWordNoByCatName" parameterType="HashMap"
+		resultMap="quizMap">
+
+		<!-- SELECT * FROM ${table} AS T LEFT JOIN category AS C ON T.category_no 
+			= C.category_no WHERE category_name = #{categoryNum} ORDER BY RAND()LIMIT 
+			5; -->
+		SELECT DISTINCT word_no
+		FROM ${table}
+		WHERE category_no IN (
+		SELECT category_no
+		FROM category
+		WHERE category_name = #{categoryName}
+		)
+		ORDER BY RAND()
+		LIMIT 2;
+
+	</select>
+	<select id="findCatNoByCatName"
+		parameterType="com.a.EnGround.vo.GameRoomVO" resultType="String">
+		SELECT
+		category_no FROM category WHERE category_name = #{categoryName};
+	</select>
+	<select id="findAllCatName"
+		resultType="com.a.EnGround.vo.CategoryVO">
+		SELECT category_name FROM category;
+	</select>
+
+	<select id="findByQuizId" parameterType="Int"
+		resultMap="quizMap"> SELECT * FROM ${table} WHERE word_no = #{quizId}; </select>
+	<select id="findAllQuiz" parameterType="String"
+		resultMap="quizMap">
+		SELECT * FROM ${value}
+		<!-- SELECT * FROM ${table}시 실행 안됨 -->
+	</select>
+	<insert id="insertQuiz" parameterType="map"> INSERT INTO
+		${table}(word_no, question, timer, hint1, hint2, hint3, answer,
+		category_no) VALUES (#{quizNo}, #{question}, #{timer}, #{hint1},
+		#{hint2}, #{hint3}, #{answer}, #{categoryNo});
+	</insert>
+	<delete id="deleteQuiz" parameterType="map"> DELETE FROM ${table}
+		WHERE word_no = #{quizNo};
+	</delete>
+	<update id="updateQuiz" parameterType="map"> UPDATE ${table} SET
+		word_no = #{quizNo}, question = #{question}, timer = #{timer}, hint1 =
+		#{hint1}, hint2 = #{hint2}, hint3 = #{hint3}, answer = #{answer},
+		category_no = #{categoryNo} WHERE word_no = #{quizNo};
+	</update>
+	<select id="findQuizzesByPage" parameterType="map"
+		resultType="com.a.EnGround.vo.QuizVO"> SELECT * FROM ${table} ORDER BY quizNo LIMIT #{limit}
+		OFFSET #{offset}
+	</select>
+</mapper>

@@ -1,0 +1,1184 @@
+body {
+    background-color: #F5F0C6; /* 배경색 */
+    display: flex; /* Flexbox 레이아웃을 사용 */
+    justify-content: center; /* 수평 방향 중앙 정렬 */
+    align-items: center; /* 수직 방향 중앙 정렬 */
+    height: 100vh; /* 화면 전체 높이 */
+    margin: 0; /* 기본 마진 제거 */
+    font-family: Arial, sans-serif; /* 폰트 설정 */
+}
+
+.container {
+    width: 80%; /* 컨테이너 너비를 80%로 설정 */
+    max-width: 900px; /* 최대 너비를 600px로 설정 */
+    height: 80%; /* 컨테이너 높이를 90%로 설정 */
+    background-image: url('../images/main.png'); /* 배경 이미지 */
+    background-size: 1000px; /* 배경 이미지 크기 설정 */
+    background-position: center; /* 배경 이미지 위치 설정 */
+    background-repeat: no-repeat; /* 배경 이미지 반복 설정 */
+    border-radius: 10px; /* 테두리 둥글게 */
+    padding: 40px; /* 내부 여백 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+    display: flex; /* Flexbox 레이아웃을 사용 */
+    flex-direction: column; /* 수직 정렬 */
+    justify-content: center; /* 수직 방향 중앙 정렬로 수정 */
+    align-items: center; /* 수평 방향 중앙 정렬 */
+    position: relative; /* 헤더를 고정하기 위해 상대 위치 */
+    padding-top: 150px; /* 고정된 헤더 높이만큼 여백 추가 */
+} 
+
+.dropdown {
+        display: inline-block;
+    }
+.waitUser-user1:hover .dropdown-content {
+    display: block;
+}
+    .dropbtn {
+    position: relative;
+	background-color: #ffc107;  
+    border: 2px solid #000000;
+    padding: 15px 20px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        right: 0px;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+    .manager-dropdown-content {
+    	display: none;
+        position: absolute;
+        top: 100px;
+        right: 0px;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {background-color: #f1f1f1}
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 150px;
+    border-radius: 10px;
+}
+.side{
+	background-color: #D3E8C7;
+	width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 10%;
+    left: 2%;
+    height: 80%;
+    border-radius: 10px;
+}
+.lang-button {
+    background-image: url('../images/home.png'); /* 배경 이미지 */
+    background-size: contain; /* 배경 이미지 크기 설정 */
+    background-position: center; /* 배경 이미지 위치 설정 */
+    background-repeat: no-repeat; /* 배경 이미지 반복 설정 */
+    border: 2px solid #808080;
+    padding: 50px 50px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+}
+
+
+.lang-button {
+    margin-right: auto;
+}
+
+.page-button {
+    margin-left: auto;
+}
+.login-form {
+    background-color: #5A9BD3; /* 폼 배경색 */
+    border-radius: 10px; /* 테두리 둥글게 */
+    padding: 20px; /* 내부 여백 */
+    width: 100%; /* 폼 너비 100% */
+    max-width: 400px; /* 폼 최대 너비 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+    display: flex; /* Flexbox 레이아웃을 사용 */
+    flex-direction: column; /* 수직 정렬 */
+    justify-content: center; /* 수직 방향 중앙 정렬 */
+}
+.input-group {
+    margin-bottom: 15px; /* 아래쪽 마진 */
+}
+
+.input-group label {
+    display: block; /* 블록 레벨 요소로 설정 */
+    margin-bottom: 5px; /* 아래쪽 마진 */
+}
+
+.input-group input {
+    width: 100%; /* 너비 100% */
+    padding: 10px; /* 내부 여백 */
+    border: 1px solid #ccc; /* 테두리 색상 및 두께 */
+    border-radius: 5px; /* 테두리 둥글게 */
+    box-sizing: border-box; /* 박스 크기 계산 방식 설정 */
+}
+
+
+
+/* 게임 페이지 스타일 */
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+    margin-bottom: 200px;
+}
+.game-header {
+    display: flex;
+    justify-content: center; /* 중앙 정렬 */
+    align-items: center;
+    width: 100%;
+}
+
+.game-score {
+    background-color: #ffffff;
+	opacity: 0.9; /* 반투명도 설정 */
+	border: 2px solid #000080;
+    border-radius: 10px;
+    font-size: 18px;
+    color: black;
+    text-align: center;
+    margin: 0 auto; /* 중앙 정렬 */
+}
+
+.game-timer {
+    background-color: #ffffff;
+	opacity: 0.9; /* 반투명도 설정 */
+	border: 2px solid #000080;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 18px;
+    color: black;
+    border: 2px solid #000080;
+}
+
+.game-input-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    justify-content: center; /* 중앙 정렬 추가 */
+}
+
+.game-input {
+    background-color: #ffffff;
+	opacity: 0.9; /* 반투명도 설정 */
+	border: 2px solid #000080;
+	padding: 10px 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 18px;
+    color: black;
+    width: 50px; /* 중앙 정렬 */
+}
+
+.game-input2 {
+   	background-color: #ffffff;
+	opacity: 0.9; /* 반투명도 설정 */
+	border: 2px solid #000080;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 18px;
+    color: black;
+    text-align: center;
+    margin: 10; /* 중앙 정렬 */
+    width: 50%; /* wide 화면에서 중앙에 배치되도록 너비 설정 */
+}
+
+.game-input-box {
+	background-color: #ffffff;
+	opacity: 0.9; /* 반투명도 설정 */
+	border: 2px solid #000080;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 24px;
+    color: black;
+}
+
+.game-button {
+    background-color: #ffffff;
+	opacity: 0.9; /* 반투명도 설정 */
+	border: 2px solid #000080;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 10px;
+    color: black;
+}
+
+.hint-container {
+    display: flex;
+    justify-content: center; /* 중앙 정렬 추가 */
+    width: 100%;
+    gap: 10px;
+}
+
+.hint-button {
+   	background-color: #ffffff;
+	opacity: 0.9; /* 반투명도 설정 */
+	border: 2px solid #000080;
+    padding: 50px;
+    font-size: 18px;
+    border-radius: 10px;
+    color: black;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.answer-container {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* 중앙 정렬 추가 */
+    align-items: center;
+    gap: 10px;
+}
+
+.answer-button {
+    background-color: #ffffff;
+	opacity: 0.9; /* 반투명도 설정 */
+	border: 2px solid #000080;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 10px;
+    color: black;
+}
+/* 결과 페이지 스타일 */
+.game-result-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+}
+
+.result-title {
+    background-color: #5A9BD3;
+    padding: 20px;
+    border: 2px solid #000080;
+    border-radius: 10px;
+    font-size: 24px;
+    color: black;
+    text-align: center;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.result-box {
+    background-color: #5A9BD3;
+    padding: 20px;
+    border: 2px solid #000080;
+    border-radius: 10px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.result-label {
+    background-color: #5A9BD3;
+    padding: 10px 20px;
+    border: 2px solid #000080;
+    border-radius: 10px;
+    font-size: 18px;
+    color: black;
+    text-align: center;
+}
+
+.result-score {
+    background-color: #5A9BD3;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 24px;
+    color: black;
+    text-align: center;
+}
+
+.result-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 80%;
+}
+
+.result-button {
+    background-color: #FFC107;  
+    
+    border: 2px solid #000080;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 10px;
+    color: black;
+    width: 40%;
+    text-align: center;
+}
+
+
+/* 온라인 로비 스타일 */
+.back-container {
+	position: relative;
+    width: 80%; /* 컨테이너 너비를 80%로 설정 */
+    max-width: 900px; /* 최대 너비를 600px로 설정 */
+    height: 80%; /* 컨테이너 높이를 90%로 설정 */
+    background-image: url('../images/back.png'); /* 배경 이미지 */
+    background-size: 1000px; /* 배경 이미지 크기 설정 */
+    background-position: center; /* 배경 이미지 위치 설정 */
+    background-repeat: no-repeat; /* 배경 이미지 반복 설정 */
+    border-radius: 10px; /* 테두리 둥글게 */
+    padding: 40px; /* 내부 여백 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+    display: flex; /* Flexbox 레이아웃을 사용 */
+    flex-direction: column; /* 수직 정렬 */
+    justify-content: center; /* 수직 방향 중앙 정렬로 수정 */
+    align-items: center; /* 수평 방향 중앙 정렬 */
+    position: relative; /* 헤더를 고정하기 위해 상대 위치 */
+    padding-top: 150px; /* 고정된 헤더 높이만큼 여백 추가 */
+} 
+.lobby-head {
+	background-color: #ffffff;
+	opacity: 0.9; /* 반투명도 설정 */
+	border: 2px solid #000080;
+    width: 500px;
+    height: 100px;
+    box-shadow: 2px 2px 4px black;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    color: black;
+}
+.lobby-container {
+	position: relative;
+	background-color: #ffffff;
+	opacity: 0.9; /* 반투명도 설정 */
+	border: 2px solid #000080;
+	border-radius: 50px;
+	box-shadow: 2px 2px 4px black;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 580px;
+    height: 100%;
+    gap: 20px;
+
+}
+.room-list{
+	    overflow-y: scroll;
+    -ms-overflow-style: none;
+}
+.room-list::-webkit-scrollbar{
+  display:none;
+}
+.Refresh-btn {
+	position: relative;
+	padding: 20px 20px; /* 버튼 크기 조정 */
+    background-image: url('../images/Refresh.png'); /* 배경 이미지 */
+    background-size: contain; /* 배경 이미지 크기 설정 */
+    background-position: center; /* 배경 이미지 위치 설정 */
+    background-repeat: no-repeat; /* 배경 이미지 반복 설정 */
+    border: 2px solid #808080;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    font-size: 14px; /* 폰트 크기 조정 */
+    top: 28px;
+    left: 220px;
+}
+.lobby-item {
+	width: 500px;
+	height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0.95; /* 반투명도 설정 */
+    border: 2px solid #000080;
+   	background-color: #D3E8C7;
+    box-shadow: 2px 2px 4px black;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.lobby-next {
+	padding: 5px 10px; /* 버튼 크기 조정 */
+    background-color: #FFC107;
+    border: 2px solid #000080;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px; /* 오른쪽 여백 */
+    font-size: 14px; /* 폰트 크기 조정 */
+}
+
+/* 온라인 게임 페이지 스타일 */
+.onlineGame-container{
+	position: relative;
+	background-color: #ffffff;
+	opacity: 0.9; /* 반투명도 설정 */
+	border: 2px solid #000080;
+	border-radius: 50px;
+	box-shadow: 2px 2px 4px black;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+    height: 100%;
+    gap: 20px;
+}
+
+
+.onlineGame-score{
+	position: absolute;
+	width: 200px;
+	height: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0.95; /* 반투명도 설정 */
+    border: 2px solid #000080;
+   	background-color: #D3E8C7;
+    box-shadow: 2px 2px 4px black;
+    border-radius: 10px;
+    padding: 10px;
+    justify-content: center;
+    top: 20px;
+    right: 30%;
+}
+
+.onlineGame-input-container{
+	position: absolute;
+	width: 90%;
+	height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0.95; /* 반투명도 설정 */
+    border-radius: 10px;
+    padding: 10px;
+    top: 100px;
+    right: 2%;
+}
+
+.onlineGame-timer {
+    background-color: #D3E8C7;
+	opacity: 0.9; /* 반투명도 설정 */
+	border: 2px solid #000080;
+	padding: 10px 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 18px;
+    color: black;
+    width: 50px; /* 중앙 정렬 */
+    margin-right: 5px;
+    margin-bottom: 15px;
+}
+
+.onlineGame-input {
+    background-color: #D3E8C7;
+	opacity: 0.9; /* 반투명도 설정 */
+	border: 2px solid #000080;
+	padding: 10px 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 18px;
+    color: black;
+    width: 50px; /* 중앙 정렬 */
+    margin-right: 5px;
+    margin-bottom: 15px;
+}
+
+.onlineGame-input2 {
+   	background-color: #ffffff;
+	opacity: 0.9; /* 반투명도 설정 */
+	border: 2px solid #000080;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 18px;
+    color: black;
+    text-align: center;
+    margin: 10; /* 중앙 정렬 */
+    width: 50%; /* wide 화면에서 중앙에 배치되도록 너비 설정 */
+    margin-right: 5px;
+    margin-bottom: 15px;
+}
+
+.onlineGame-input-box {
+	width: 90%;
+	background-color: #ffffff;
+	opacity: 0.9; /* 반투명도 설정 */
+	border: 2px solid #000080;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 20px 20px;
+    font-size: 24px;
+    color: black;
+    margin-right: 5px;
+    margin-bottom: 15px;
+    max-height: 40px;
+    max-width: 330px;
+    text-align: center;
+}
+
+.onlineGame-button {
+    background-color: #ffff00;
+	opacity: 0.9; /* 반투명도 설정 */
+	border: 2px solid #000080;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 10px;
+    color: black;
+    margin-bottom: 15px;
+}
+.onlineGame-chatlogBox {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* 중앙 정렬 추가 */
+    align-items: center;
+    gap: 10px;
+}
+
+.answer-button {
+    background-color: #ffffff;
+	opacity: 0.9; /* 반투명도 설정 */
+	border: 2px solid #000080;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 10px;
+    color: black;
+}
+
+.answer-button {
+    background-color: #ffffff;
+	opacity: 0.9; /* 반투명도 설정 */
+	border: 2px solid #000080;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 10px;
+    color: black;
+}
+.online-hint-container {
+	position: absolute;
+    display: flex;
+    justify-content: center; /* 중앙 정렬 추가 */
+    width: 100%;
+    gap: 10px;
+    top: 160px;
+    right: 0%;
+}
+
+.online-hint-button{
+	background-color: #D3E8C7;
+	opacity: 0.9; /* 반투명도 설정 */
+	border: 2px solid #000080;
+    padding: 30px 30px;
+    font-size: 18px;
+    border-radius: 10px;
+    color: black;
+    flex-grow: 1;
+    text-align: center;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 18px;
+}
+
+.onlineGame-chatlogBox{
+	position: absolute;
+	background-color: #D3E8C7;
+	opacity: 0.9; /* 반투명도 설정 */
+	border: 2px solid #000080;
+	border-radius: 10px;
+	box-shadow: 2px 2px 4px black;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 550px;
+    height: 350px;
+    gap: 20px;
+    top: 270px;
+	
+}
+.onlineGame-chatlog{
+	position: absolute;
+	background-color: #ffffff;
+	opacity: 0.9; /* 반투명도 설정 */
+	border: 2px solid #000080;
+	border-radius: 10px;
+	box-shadow: 2px 2px 4px black;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 530px;
+    height: 260px;
+    gap: 20px;
+    top: 8px;
+    overflow-y: scroll;
+	
+}
+.onlineGame-answer-container{
+	position: absolute;
+	opacity: 0.9; /* 반투명도 설정 */
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 530px;
+    height: 80px;
+    gap: 20px;
+	top: 277px;
+}
+.onlineGame-input2{
+	position: absolute;
+	background-color: #ffffff;
+	opacity: 0.9; /* 반투명도 설정 */
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 40px;
+    gap: 20px;
+	top: 5px;
+	left: 2px;
+}
+.onlineGame-answer-btn{
+	position: absolute;
+	background-color: #ffff00;
+	opacity: 0.9; /* 반투명도 설정 */
+	display: flex;
+    flex-direction: column;
+    border: 2px solid #000080;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 10px 10px;
+    gap: 20px;
+    top: 15px;
+	right: 10px;
+}
+.side{
+	left: 20px;
+	width:18%;
+	margin-right: 150%;
+}
+.side-container{
+	position: relative;
+	background-color: #ffffff;
+	opacity: 0.9; /* 반투명도 설정 */
+	display: flex;
+    align-items: center;
+    border-radius: 10px;
+    width: 100%;
+    height: 80px;
+    gap: 180px;
+    left: 3px;
+    justify-content: space-between;
+}
+
+.side-score{
+	position: absolute;
+    top: 50px;
+    left: 3px;
+    font-variant: jis04; /* JIS04는 CSS에서 font-variant 속성으로 사용됩니다. */
+}
+
+.onlineGame-dropbtn{
+    position: absolute;
+    background-color: #ffc107;
+    border: 2px solid #000080;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 15px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+    right:5px;
+    top:-30px;
+}
+
+
+.h3{
+	font-weight: bold;
+	margin-left: 5px;
+	width: 30px;
+}
+
+.create-room{
+	position: absolute;
+	background-color: #ffff00;
+    padding: 10px 10px;
+    border-radius: 15px;
+    bottom: 10px;
+}
+
+/* 대기방 css */
+.wait-head{
+	background-color: #ffff80;
+	opacity: 0.9; /* 반투명도 설정 */
+	border: 2px solid #000080;
+	border-radius: 20px;
+	box-shadow: 2px 2px 4px black;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 80px;
+    margin-top: 0px;
+}
+.wait-container{
+	position: relative;
+	background-color: #ffffff;
+	opacity: 0.9; /* 반투명도 설정 */
+	border: 2px solid #000080;
+	border-radius: 20px;
+	box-shadow: 2px 2px 4px black;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 800px;
+    height: 100%;
+    gap: 20px;
+    margin-top: 10px;
+}
+.waitUser-body{
+	position: absolute;
+	background-color: #D3E8C7;
+	opacity: 0.9; /* 반투명도 설정 */
+	border: 2px solid #000080;
+	border-radius: 20px;
+	box-shadow: 2px 2px 4px black;
+    width: 750px;
+    height: 45%;
+    top: 20px;
+}
+.waitUser-userboard{
+	position: absolute;
+	background-color: #D3E8C7;
+	opacity: 0.9; /* 반투명도 설정 */
+	border-radius: 20px;
+    width: 750px;
+    height: 100%;
+    top: 0px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+}
+.waitUser-user1{
+	position: absolute;
+	padding: 30px 30px;
+	background-color: #ffffff;
+	opacity: 0.9; /* 반투명도 설정 */
+	border: 2px solid #000080;
+	border-radius: 20px;
+	box-shadow: 2px 2px 4px black;
+	width: 130px;
+    height: 10%;
+    gap: 20px;
+    top: 30px;
+    left: 5%;
+    text-align: center;
+    font-weight: bold;
+}
+.waitUser-user2{
+	position: absolute;
+	padding: 30px 30px;
+	background-color: #ffffff;
+	opacity: 0.9; /* 반투명도 설정 */
+	border: 2px solid #000080;
+	border-radius: 20px;
+	box-shadow: 2px 2px 4px black;
+	width: 130px;
+    height: 10%;
+    gap: 20px;
+    top: 30px;
+    left: 37%;
+    text-align: center;
+    font-weight: bold;
+}
+.waitUser-user3{
+	position: absolute;
+	padding: 30px 30px;
+	background-color: #ffffff;
+	opacity: 0.9; /* 반투명도 설정 */
+	border: 2px solid #000080;
+	border-radius: 20px;
+	box-shadow: 2px 2px 4px black;
+	width: 130px;
+    height: 10%;
+    gap: 20px;
+    top: 30px;
+    left: 70%;
+    text-align: center;
+    font-weight: bold;
+}
+.waitUser-user4{
+	position: absolute;
+	padding: 30px 30px;
+	background-color: #ffffff;
+	opacity: 0.9; /* 반투명도 설정 */
+	border: 2px solid #000080;
+	border-radius: 20px;
+	box-shadow: 2px 2px 4px black;
+	width: 130px;
+    height: 10%;
+    gap: 20px;
+    bottom: 30px;
+    left: 5%;
+    text-align: center;
+    font-weight: bold;
+}
+.waitUser-user5{
+	position: absolute;
+	padding: 30px 30px;
+	background-color: #ffffff;
+	opacity: 0.9; /* 반투명도 설정 */
+	border: 2px solid #000080;
+	border-radius: 20px;
+	box-shadow: 2px 2px 4px black;
+	width: 130px;
+    height: 10%;
+    gap: 20px;
+    bottom: 30px;
+    left: 37%;
+    text-align: center;
+    font-weight: bold;
+}
+.waitUser-user6{
+	position: absolute;
+	padding: 30px 30px;
+	background-color: #ffffff;
+	opacity: 0.9; /* 반투명도 설정 */
+	border: 2px solid #000080;
+	border-radius: 20px;
+	box-shadow: 2px 2px 4px black;
+	width: 130px;
+    height: 10%;
+    gap: 20px;
+    bottom: 30px;
+    left: 70%;
+    text-align: center;
+    font-weight: bold;
+}
+.wait-chatlogBox{
+	position: absolute;
+	background-color: #D3E8C7;
+	opacity: 0.9; /* 반투명도 설정 */
+	border: 2px solid #000080;
+	border-radius: 10px;
+	box-shadow: 2px 2px 4px black;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+    height: 47%;
+    gap: 20px;
+    bottom: 10px;
+}
+.wait-chatlog{
+	position: absolute;
+	background-color: #ffffff;
+	opacity: 0.9; /* 반투명도 설정 */
+	border: 2px solid #000080;
+	border-radius: 10px;
+	box-shadow: 2px 2px 4px black;
+	display: inline-block;
+    flex-direction: column;
+    align-items: left;
+    left: 10px;
+    width: 97%;
+    height: 75%;
+    gap: 20px;
+    top: 8px;
+    overflow-y: scroll;
+     -ms-overflow-style: none;
+}
+.wait-chatlog::-webkit-scrollbar{
+  display:none;
+}
+
+
+.chatMessage{
+	margin-left: 10px;
+    margin-top: 10;
+    font-size: 32px;
+    width: 100%;
+    font-size: 26px;
+}
+
+.wait-answer-container{
+	position: absolute;
+	opacity: 0.9; /* 반투명도 설정 */
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 98%;
+    height: 20%;
+    gap: 20px;
+	bottom: 5px;
+}
+.wait-input2{
+	position: absolute;
+	background-color: #ffffff;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    width: 75%;
+    height: 40px;
+    text-align: center;
+    gap: 20px;
+	bottom: 5px;
+	left: 2px;
+}
+.wait-answer-btn{
+	position: absolute;
+	background-color: #ffff00;
+	display: flex;
+	border: 2px solid #000080;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 10px 10px;
+    gap: 20px;
+    bottom: 5px;
+	right: 15%;
+}
+.wait-ready-btn{
+	position: absolute;
+	background-color: #ffff00;
+	display: flex;
+	border: 2px solid #000080;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 15px 30px;
+    gap: 20px;
+    bottom: 1px;
+	right: 1%;
+}
+.waitUser-body {
+    display: flex; /* Flexbox 사용 */
+    flex-direction: column; /* 세로 방향으로 배치 */
+    align-items: center; /* 가로 중앙 정렬 */
+    width: 100%; /* 전체 너비 사용 */
+    padding: 20px; /* 바깥 여백 추가 */
+    box-sizing: border-box; /* 패딩 포함하여 계산 */
+    background-color: #D3E8C7; /* 배경색 추가 */
+}
+
+.waitUser-userboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 가로 중앙 정렬 */
+    width: 100%; /* 부모 요소에 맞춰 100% 너비 사용 */
+    max-width: 400px; /* 최대 너비 설정 */
+    background-color: #ffffff; /* 카드 배경색 */
+    border-radius: 10px; /* 둥근 모서리 */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
+    padding: 20px; /* 내부 여백 */
+    height: auto;
+}
+
+.wait-board-name {
+    display: flex; /* Flexbox 사용 */
+    justify-content: space-between; /* 레이블과 입력 요소 사이에 공간 */
+    align-items: center; /* 세로 중앙 정렬 */
+    width: 100%; /* 전체 너비 사용 */
+    margin-bottom: 10px; /* 각 항목 간의 간격 */
+}
+
+.wait-board-name label {
+    padding-right: 5px; /* 레이블과 입력 요소 간의 간격 */
+    flex: 0 0 auto;
+    white-space: nowrap; /* 레이블이 줄 바꿈되지 않도록 설정 */
+    width: 100px; /* 고정 너비 */
+    text-align: right; /* 오른쪽 정렬 */
+    font-weight: bold; /* 레이블 강조 */
+}
+
+.wait-board-name input,
+.wait-board-name select {
+    flex: 1; /* 입력 및 선택 요소가 남은 공간을 차지하게 함 */
+    padding: 8px; /* 여백 추가 */
+    border: 1px solid #ccc; /* 테두리 추가 */
+    border-radius: 4px; /* 테두리 둥글게 */
+    max-width: 200px; /* 최대 너비 설정 */
+    transition: border-color 0.3s; /* 테두리 색 변화 효과 */
+}
+
+.wait-board-name input:focus,
+.wait-board-name select:focus {
+    border-color: #007bff; /* 포커스 시 테두리 색상 변경 */
+    outline: none; /* 기본 포커스 아웃라인 제거 */
+}
+
+
+
+/* 방생성 */
+.create-head{
+	position: absolute;
+	background-color: #ffff80;
+	opacity: 0.9; /* 반투명도 설정 */
+	border: 2px solid #000080;
+	border-radius: 20px;
+	box-shadow: 2px 2px 4px black;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    height: 80px;
+    top: 5%;
+	
+}
+
+.createBody-container{
+	position: relative;
+	background-color: #ffffff;
+	opacity: 0.9; /* 반투명도 설정 */
+	border: 2px solid #000080;
+	border-radius: 20px;
+	box-shadow: 2px 2px 4px black;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    height: 40%;
+    gap: 20px;
+    margin-top: 10px;
+    min-height: 400px;
+    min-width: 400px;
+}
+.create-btn{
+	background-color: #ffff00;
+    padding: 10px 10px;
+    border-radius: 15px;
+    border: 2px solid #000080;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    bottom: 10px;
+    border: 2px solid #000080;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+   	left: 35%;
+}
+
+
+.back-btn{
+	background-color: #ffff00;
+	border: 2px solid #000080;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 10px 10px;
+    border-radius: 15px;
+    bottom: 10px;
+    right: 35%;
+}
+
+.create-body1 input[type="text"],
+.create-body1 input[type="password"] {
+    background-color: #cee1f2;
+    opacity: 0.9; /* 반투명도 설정 */
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    border: 1px solid #000080; /* 진한 남색 외곽선 */
+    margin-right: 10px; /* 오른쪽 여백 */
+    width: 100%; /* 가로 너비를 100%로 설정 */
+    max-width: 300px; /* 최대 너비 설정 */
+    box-sizing: border-box; /* 패딩과 테두리를 포함한 크기 설정 */
+    align-items: center;
+}
+
+.ADside{
+	width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 20%;
+    right: 2%;
+    height: 80%;
+    border-radius: 10px;
+}
+
+

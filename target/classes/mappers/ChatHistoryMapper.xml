@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.a.EnGround.repo.ChatHistoryRepository">
+	<resultMap type="com.a.EnGround.vo.ChatHistoryVO"
+		id="ChatHistoryMap">
+		<result property="chatHistoryNo" column="chat_History_No" />
+		<result property="roomId" column="room_id" />
+		<result property="userId" column="user_id" />
+		<result property="content" column="content" />
+		<result property="time" column="time" />
+	</resultMap>
+
+	<insert id="insertChatHistory"
+		parameterType="com.a.EnGround.vo.ChatHistoryVO">
+		insert into chat_history(room_id, user_id, content) values(#{roomId}, #{userId}, #{content});
+	</insert>
+	<select id="selectChatHistory" parameterType="com.a.EnGround.vo.ChatHistoryVO" resultMap="ChatHistoryMap">
+		select * from chat_history where room_id = #{roomId};
+	</select>
+</mapper>
