@@ -16,6 +16,7 @@ import javax.servlet.http.HttpSession;
 
 import java.util.Map;
 
+/*장성진*/
 public class CustomHandshakeInterceptor implements HandshakeInterceptor {
 
 	@Override

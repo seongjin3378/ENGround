@@ -14,6 +14,7 @@ import com.a.EnGround.vo.CategoryVO;
 import com.a.EnGround.vo.GameRoomVO;
 import com.a.EnGround.vo.QuizVO;
 
+/*장성진*/
 @Repository
 public class QuizRepositoryImpl implements QuizRepository{
 	 private static final String NAME_SPACE = "com.a.EnGround.repo.QuizRepository";

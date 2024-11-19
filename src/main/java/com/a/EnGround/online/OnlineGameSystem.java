@@ -12,7 +12,7 @@ import com.a.EnGround.vo.GameSessionVO;
 import com.a.EnGround.vo.ReportUserVO;
 import com.a.EnGround.vo.SessionVO;
 import com.fasterxml.jackson.core.JsonProcessingException;
-
+/*장성진*/
 public interface OnlineGameSystem {
 	List<GameRoomVO> findAllRoom();
 	String createRoom(String userId, String roomTitle) throws JsonProcessingException;

@@ -55,7 +55,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-
+/*장성진*/
 @Controller
 public class OnlineGameRoomController {
 	@Qualifier("onlineService")
@@ -139,7 +139,7 @@ public class OnlineGameRoomController {
 		model.addAttribute("category", category);
 		model.addAttribute("chatHistoryList", chatHistoryList);
 		quizService.insertHistory(session);
-		return "testRoom";
+		return "waitingRoom";
 	}
 	
 	@PostMapping("/room/{roomId}")

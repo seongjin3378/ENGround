@@ -1,4 +1,5 @@
-	export function setTimeMapMessage(stompClient, time)
+/*장성진*/
+export function setTimeMapMessage(stompClient, time)
 	{
 		const timeMapMessage = {
 				roomId: roomIdGlobal,

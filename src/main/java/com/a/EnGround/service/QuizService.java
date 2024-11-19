@@ -15,6 +15,7 @@ import com.a.EnGround.vo.SessionVO;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 
+/*장성진*/
 public interface QuizService {
 
 	    public QuizVO loadQuiz(HttpSession session) throws JsonMappingException, JsonProcessingException;

@@ -10,6 +10,7 @@
 <link rel="stylesheet"
 	href="<c:url value='/resources/css/styleJANG.css'/>" />
 </head>
+<!-- 장성진 -->
 <body>
 	<div class="result-container">
 		<div class="game-result-container">

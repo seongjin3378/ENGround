@@ -15,6 +15,8 @@ import org.springframework.stereotype.Repository;
 import com.a.EnGround.vo.GameRoomVO;
 import com.a.EnGround.vo.HistoryVO;
 
+
+/*장성진*/
 @Repository 
 public class HistoryRepository {
 	

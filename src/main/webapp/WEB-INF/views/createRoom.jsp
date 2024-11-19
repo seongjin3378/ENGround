@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 </head>
+<!-- 장성진 -->
 <body>
 		<form action="<c:url value='/createRoom' />" method="post">
 		<div class="createBody-container" style="margin-left:7%; text-align:center;">

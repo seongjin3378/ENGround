@@ -1,4 +1,6 @@
 import * as gameSend from './gameSend.js';
+
+/*장성진*/
 export function subscribeGetTimeMap(stompClient, topic)
 {
 	 stompClient.subscribe(topic, function (message) {

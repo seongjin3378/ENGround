@@ -30,7 +30,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
+/*장성진*/
 @Component
 @Qualifier("sentenceQuiz")
 public class SentenceQuizSystemImpl implements QuizSystem{

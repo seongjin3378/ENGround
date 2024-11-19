@@ -12,7 +12,7 @@ import com.a.EnGround.vo.SessionVO;
 import com.a.EnGround.vo.UserVO;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
-
+/*장성진*/
 public interface QuizSystem {
 	
 	public String ConvertWordToBlank(String hint, List<InGameQuizVO> quiz, GameRoomVO gameRoomVo); // ConvertBlnakToChar 안에 결합

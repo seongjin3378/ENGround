@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 import com.a.EnGround.vo.GameRoomVO;
 import com.a.EnGround.vo.InGameQuizVO;
 import com.a.EnGround.vo.QuizVO;
-
+/*장성진*/
 @Component
 @Qualifier("word")
 public class ConvertWordImpl implements ConvertBlankSystem{

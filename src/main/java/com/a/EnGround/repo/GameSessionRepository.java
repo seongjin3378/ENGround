@@ -15,6 +15,7 @@ import com.a.EnGround.vo.GameRoomVO;
 import com.a.EnGround.vo.GameSessionVO;
 import com.a.EnGround.vo.SessionVO;
 
+/*장성진*/
 @Repository
 public class GameSessionRepository {
 	private static final String NAME_SPACE = "com.a.EnGround.repo.GameSessionRepository";

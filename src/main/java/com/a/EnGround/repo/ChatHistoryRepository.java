@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.a.EnGround.vo.ChatHistoryVO;
-
+/*장성진*/
 @Repository
 public class ChatHistoryRepository {
 	private static final String NAME_SPACE = "com.a.EnGround.repo.ChatHistoryRepository";

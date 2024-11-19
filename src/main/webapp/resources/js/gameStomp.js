@@ -1,6 +1,9 @@
 import lobbyStomp from './lobbyStomp.js';
+
 import * as roomSend from  './roomSend.js';
 import * as gameSend from './gameSend.js';
+
+/*장성진*/
 $(".wait-answer-btn").on("click", function(){
 	roomSend.chatMessage(lobbyStomp.getStompClient());
 	$("#wait-input-answer").val("");

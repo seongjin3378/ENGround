@@ -40,7 +40,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 
-//
+/*장성진*/
 @Component
 @Qualifier("wordQuiz")
 public class WordQuizSystemImpl implements QuizSystem{

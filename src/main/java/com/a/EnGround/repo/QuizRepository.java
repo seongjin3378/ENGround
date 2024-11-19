@@ -10,7 +10,9 @@ import org.apache.ibatis.annotations.Param;
 import com.a.EnGround.vo.CategoryVO;
 import com.a.EnGround.vo.GameRoomVO;
 import com.a.EnGround.vo.QuizVO;
-//
+
+
+/*장성진*/
 @Mapper
 public interface QuizRepository {
 	

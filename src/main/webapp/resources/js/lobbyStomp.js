@@ -1,6 +1,8 @@
 import * as roomSend from  './roomSend.js';
 import * as roomSubScribe from  './roomSubScribe.js';
 import * as gameSubScribe from  './gameSubscribe.js';
+
+/*장성진*/
 function createLobbyStomp()
 	{
 	let readyUser= {};

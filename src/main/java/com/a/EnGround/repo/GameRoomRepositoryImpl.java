@@ -13,7 +13,7 @@ import com.a.EnGround.vo.GameRoomVO;
 import com.a.EnGround.vo.QuizVO;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-//
+/*장성진*/
 @Repository
 public class GameRoomRepositoryImpl implements GameRoomRepository{
 	 private static final String GAME_MAPPER = "com.a.EnGround.repo.GameRoomRepository";

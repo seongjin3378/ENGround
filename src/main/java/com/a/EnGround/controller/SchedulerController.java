@@ -27,7 +27,7 @@ import com.a.EnGround.vo.MessageVO;
 import com.a.EnGround.vo.SessionVO;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
-
+/*장성진*/
 @Controller
 public class SchedulerController {
 	private static final Logger logger = LoggerFactory.getLogger(SchedulerController.class);

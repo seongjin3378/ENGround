@@ -1,4 +1,6 @@
-	export function delegationHostMessage(element, stompClient)
+	
+/*장성진*/
+export function delegationHostMessage(element, stompClient)
 	{
 		const delegationHostMessage = {
 				roomId: roomIdGlobal,

@@ -1,4 +1,5 @@
 import * as roomSend from  './roomSend.js';  
+/*장성진*/
 export function subscribeJoinRoom(stompClient, readyUser, topic) {
     stompClient.subscribe(topic, function (message) {
         let receivedMessage = JSON.parse(message.body);

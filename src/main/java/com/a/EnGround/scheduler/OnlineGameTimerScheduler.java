@@ -25,6 +25,8 @@ import com.a.EnGround.vo.HistoryVO;
 import com.a.EnGround.vo.MessageVO;
 import com.a.EnGround.vo.SessionVO;
 
+
+/*장성진*/
 @Component
 public class OnlineGameTimerScheduler {
 	private ThreadPoolTaskScheduler OnlineTimerScheduler;

@@ -14,6 +14,8 @@ import org.springframework.web.socket.WebSocketSession;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+
+/*장성진*/
 @Component
 public class WebSocketHandler extends TextWebSocketHandler{
 

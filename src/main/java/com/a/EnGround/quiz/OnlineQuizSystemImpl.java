@@ -33,7 +33,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-/* 내일할 것 : game_records 총 맞춘 값 나타내기*/
+/*장성진*/
 @Qualifier("onlineQuiz")
 @Component
 public class OnlineQuizSystemImpl implements QuizSystem {

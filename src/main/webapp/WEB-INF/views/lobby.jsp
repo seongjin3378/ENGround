@@ -18,7 +18,7 @@
 	src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-
+<!-- 장성진 -->
 	<div class="modal fade" id="myModal" tabindex="-1"
 		aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">

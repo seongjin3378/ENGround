@@ -15,6 +15,8 @@ import com.a.EnGround.vo.InGameQuizVO;
 import com.a.EnGround.vo.QuizVO;
 import com.fasterxml.jackson.core.JsonProcessingException;
 
+
+/*장성진*/
 @Repository
 public class InGameQuizRepository {
 	@Autowired

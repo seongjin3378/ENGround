@@ -7,7 +7,7 @@ import com.a.EnGround.vo.GameRoomVO;
 import com.a.EnGround.vo.QuizVO;
 import com.a.EnGround.vo.UserVO;
 import com.fasterxml.jackson.core.JsonProcessingException;
-//
+/*장성진*/
 public interface GameRoomRepository {
 	GameRoomVO findGameInform(String roomId, String gameMode);
 	int saveGameInform();
